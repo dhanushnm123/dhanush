@@ -101,7 +101,7 @@ view: users {
 
 dimension: full_name {
   type: string
-  sql: CONCAT(CONCAT($first_name, ' '), ${last_name}) ;;
+  sql: CONCAT(CONCAT(${first_name}, ' '), ${last_name}) ;;
 }
 dimension: length_full_name {
   type:number
