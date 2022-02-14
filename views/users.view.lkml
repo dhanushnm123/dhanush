@@ -109,8 +109,9 @@ dimension: length_full_name {
 }
 dimension: age_tier{
   type: tier
-  tiers: [1,10,20,30,40,50,60,70,80,90,100]
+  tiers: [10,20,30,40,50,60,70,80,90]
   sql: ${age} ;;
+  style: interval
 }
 measure: average_user_age{
   type: average
