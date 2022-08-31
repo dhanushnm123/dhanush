@@ -99,6 +99,27 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+<<<<<<< HEAD
+=======
+dimension: full_name {
+  type: string
+  sql: CONCAT(CONCAT(${first_name}, ' '), ${last_name}) ;;
+}
+dimension: length_full_name {
+  type:number
+  sql: LENGTH(${full_name}) ;;
+}
+dimension: age_tier{
+  type: tier
+  tiers: [10,20,30,40,50,60,70,80,90]
+  sql: ${age} ;;
+  style: interval
+}
+measure: average_user_age{
+  type: average
+  sql: ${age} ;;
+}
+>>>>>>> branch 'dev-dhanush-n-m-xf83' of git@github.com:dhanushnm123/dhanush.git
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, orders.count]

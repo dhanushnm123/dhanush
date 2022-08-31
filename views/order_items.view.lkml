@@ -49,6 +49,7 @@ view: order_items {
   dimension: sale_price {
     type: number
     sql: ${TABLE}.sale_price ;;
+<<<<<<< HEAD
   }
 
   # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
@@ -68,5 +69,35 @@ view: order_items {
   measure: count {
     type: count
     drill_fields: [id, orders.id, inventory_items.id]
+=======
+    value_format_name: usd
+    hidden: yes
+  }
+
+
+  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+  measure: total_sale_price {
+    type: sum
+    sql: ${sale_price} ;;
+    hidden: yes
+  }
+
+  measure: average_sale_price {
+    type: average
+    sql: ${sale_price} ;;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [id, orders.id, inventory_items.id]
+  }
+  measure:  total_revenue  {
+    type: sum
+    sql: ${sale_price} ;;
+    value_format_name: usd
+>>>>>>> branch 'dev-dhanush-n-m-xf83' of git@github.com:dhanushnm123/dhanush.git
   }
 }
